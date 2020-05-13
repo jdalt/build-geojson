@@ -1,0 +1,16 @@
+{
+  "name": "build-geojson",
+  "version": "1.0.0",
+  "description": "Build geojson features for stress testing",
+  "main": "points.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^5.1.0",
+    "lodash": "^4.17.15",
+    "random-float": "^2.0.0"
+  }
+}
