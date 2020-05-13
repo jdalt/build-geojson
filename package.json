@@ -1,8 +1,11 @@
 {
   "name": "build-geojson",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Build geojson features for stress testing",
-  "main": "points.js",
+  "main": "index.js",
+  "bin": {
+    "build-geojson": "bin/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

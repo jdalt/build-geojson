@@ -9,10 +9,21 @@ function generatePointSquare(bbox, count) {
   let points = []
   _.times(pointsPerRow, (i) => {
     _.times(pointsPerRow, (j) => {
-      const lng = n + (lngDelta * i)
-      const lat = e + (latDelta * j)
+      const lng = s + (lngDelta * i)
+      const lat = w + (latDelta * j)
       points.push([parseFloat(lng.toFixed(6)), parseFloat(lat.toFixed(6))])
     })
+  })
+  return points
+}
+
+function generateRandomPointSquare(bbox, count) {
+  const [s,w,n,e] = bbox
+  let points = []
+  _.times(count, (i) => {
+    const lat = randomFloat(e, w)
+    const lng = randomFloat(n, s)
+    points.push([parseFloat(lng.toFixed(6)), parseFloat(lat.toFixed(6))])
   })
   return points
 }
@@ -35,4 +46,8 @@ function buildPointFeatureCollection(coordList) {
   }
 }
 
-module.exports = { generatePointSquare, buildPointFeatureCollection }
+module.exports = {
+  generatePointSquare,
+  buildPointFeatureCollection,
+  generateRandomPointSquare
+}
